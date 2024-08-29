@@ -1,0 +1,79 @@
+---
+title: "Weekly Viz 2024-08-18(W33)"
+description: "Is migration mainly driven by wealth?"
+date: "2024-08-29"
+categories:
+  - Tableau
+  - R
+---
+
+This week's visulization is a recation of [blog post](https://aditya-dahiya.github.io/projects_presentations/data_vizs/owid_income_migrants.html){target="_blank"} by [Dr. Aditya Dahiya](https://aditya-dahiya.github.io/projects_presentations/about.html){target="_blank"}.
+
+During the process of creating this week's viz, I learned how to use [R Studio](https://posit.co/download/rstudio-desktop/){target="_blank"} and the basics of data wragling with [tidyverse](https://www.tidyverse.org/){target="_blank"}, which led me to discover [Quarto](https://quarto.org/){target="_blank"}, resulting in my current blog system. 
+
+What a wonderful journey it has been, it all started with a simple glance at Dr. Aditya Dahiya's blog. R is so fascinating; I will definitely continue to dive deeper into it.
+
+```{=html}
+<div class='tableauPlaceholder' id='viz1724939978880' style='position: relative'><noscript><a href='#'><img alt='2024 W33 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;20&#47;2024W33VizExtensionSankey&#47;2024W33&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='2024W33VizExtensionSankey&#47;2024W33' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;20&#47;2024W33VizExtensionSankey&#47;2024W33&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1724939978880');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1200px';vizElement.style.height='927px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1200px';vizElement.style.height='927px';} else { vizElement.style.width='100%';vizElement.style.height='727px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+```
+
+## Dataset
+
+The blog post is using source data from the [United Nations Department of Economic and Social Affairs (UN DESA)](https://www.un.org/development/desa/pd/content/international-migrant-stock){target="_blank"}.
+
+The author cleaned the data for use with R, I re-cleaned the data for use with Viz Extension in Tableau. 
+
+```R
+library(tidyverse)
+
+url_remote <- "https://www.un.org/development/desa/pd/sites/www.un.org.development.desa.pd/files/undesa_pd_2020_ims_stock_by_sex_destination_and_origin.xlsx"
+url_local <- "international_migrant_stock_2020/undesa_pd_2020_ims_stock_by_sex_destination_and_origin.xlsx"
+
+raw_df <- openxlsx::read.xlsx(
+  xlsxFile = url_local,
+  sheet = "Table 2",
+  startRow = 10,
+  colNames = TRUE
+)
+
+test <- raw_df |>
+  select(-12) |> 
+  janitor::clean_names() |> 
+  as_tibble() |>
+  rename(destination = region_development_group_of_destination) |> 
+  mutate(destination = str_squish(destination)) |> 
+  select(-c(x1, x3, x4)) |> 
+  filter(str_detect(destination, "income")) |> 
+  select(-world) |> 
+  pivot_longer(
+    cols = -destination,
+    names_to = "origin",
+    values_to = "value"
+  ) |> 
+  filter(str_detect(origin, "income")) |> 
+  mutate(
+    destination = snakecase::to_title_case(destination),
+    origin = snakecase::to_title_case(origin)
+  ) |>
+  filter(
+    (destination != "Middle Income Countries")
+    &
+      (origin != "Middle Income Countries")
+  )
+
+write_csv(migrant_flow, file = "international_migrant_stock_2020/migration.csv")
+```
+
+## Thoughts About Tableau Viz Extension
+
+Although the [Tableau Viz Extension](https://www.tableau.com/blog/visual-analytics-tableau-viz-extensions){target="_blank"} is a significant feature of Tableau released recently, I found that there are still some areas for improvement. For instance:
+
+- The flexibility of Chart Format is relatively low, especially in the Level Label, where you cannot adjust its position to both outside which is quite common in Sankey chart, and the font colors are not consistent in color palette, some are black, some are white.
+- Currently, only Tableau's own Sankey Extension supports publishing to Tableau Public.
+- While there are some third-party extensions available, but many require purchase, and I haven't tested whether I can publish them to Tableau Server yet.
+
+Therefore, I personally think that while the Tableau Viz Extension looks promising, Tableau still have a lot of work to do. I will continue to keep an eye on it.
+
+## References
+
+- A [good material](https://introduction-r-tidyverse.netlify.app/){target="_blank"} to learn R, and it is open sourced on [Github](https://github.com/sophie-a-lee/Introduction_R_Tidyverse_course){target="_blank"}.
