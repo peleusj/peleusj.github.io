@@ -3,7 +3,9 @@ title: "Visualization"
 listing:
   contents: viz
   sort: "date desc"
-  type: table
+  type: default
+  # image-height: 150px
+  # fields: [date, title, description]
   categories: true
   sort-ui: true
   filter-ui: true

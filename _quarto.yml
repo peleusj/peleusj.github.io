@@ -11,10 +11,14 @@ website:
         href: https://x.com/peleusj
       - icon: github
         href: https://github.com/peleusj
+
 format:
   html:
-    theme: cosmo
+    theme: 
+      light: united
+      dark: superhero
     css: styles.css
+    # page-layout: full
 
 execute:
   freeze: auto

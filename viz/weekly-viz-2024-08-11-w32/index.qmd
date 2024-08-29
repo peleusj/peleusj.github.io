@@ -1,0 +1,41 @@
+---
+title: "Weekly Viz 2024-08-11(W32)"
+description: "Can you compare Olympic medalist age to a user’s age?"
+date: "2024-08-19"
+categories:
+  - WOW24
+  - Tableau
+image: "featured.png"
+---
+
+This week's visulization is from [Workout Wednesday challenge W32](https://workout-wednesday.com/2024w32tab/){target="_blank"}.
+
+
+```{=html}
+<div class='tableauPlaceholder' id='viz1724918910145' style='position: relative'><noscript><a href='#'><img alt='WOW2024 W32: Can you compare Olympic medalist age to a user’s age? ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ol&#47;OlympicViz-WOW2024Week32&#47;WOW2024W32_1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='OlympicViz-WOW2024Week32&#47;WOW2024W32_1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ol&#47;OlympicViz-WOW2024Week32&#47;WOW2024W32_1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1724918910145');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1200px';vizElement.style.height='2027px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1200px';vizElement.style.height='2027px';} else { vizElement.style.width='100%';vizElement.style.height='2177px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+```
+
+## Dataset
+
+The original dataset is from [kaggle](https://www.kaggle.com/datasets/heesoo37/120-years-of-olympic-history-athletes-and-results/data){target="_blank"}.
+
+> This is a historical dataset on the modern Olympic Games, including all the Games from Athens 1896 to Rio 2016. I scraped this data from www.sports-reference.com in May 2018. The R code I used to scrape and wrangle the data is on GitHub. I recommend checking my kernel before starting your own analysis.
+
+But the challenge use a cleaned Excel file.
+
+> This challenge uses data from 1896-2016 Summer Olympics. You can find it [here](https://docs.google.com/spreadsheets/d/12bPULEVBkJgSoVwdC15oLznrWjugWtU0/edit?gid=253771566#gid=253771566){target="_blank"} on Google Drive.
+
+## Takeaway
+
+- Use `INT((INDEX()-1)/5)` and table calculation to distribute rows
+  - need to pay attention to specific dimensions used by the table calculation
+- Plain string concat `STR(FIXED_LOD)` as dimensions
+- Use `IIF([Medal] = 'Gold', 'GOLD', NULL)` function to simplify `IF THEN END` expresion
+- Reference line fill above according to the parameter
+- Edit Axis with custom range
+- Tooltip formatting(font family, font size, colors)
+  - Learned about a new font `Trebuchet MS`
+- Set Dashboard title
+
+## References
+- [Solution Guide](https://donnacoles.home.blog/2024/08/09/can-you-compare-an-olympic-medallists-age-to-a-users-age/){target="_blank"} by [Donna Coles](https://x.com/donnacoles30){target="_blank"}
