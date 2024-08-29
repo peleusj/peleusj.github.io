@@ -7,6 +7,34 @@
     "text": "About this blog"
   },
   {
+    "objectID": "viz/weekly-viz-2024-08-18-w33/index.html",
+    "href": "viz/weekly-viz-2024-08-18-w33/index.html",
+    "title": "Weekly Viz 2024-08-18(W33)",
+    "section": "",
+    "text": "This week’s visulization is a recation of blog post by Dr. Aditya Dahiya.\nDuring the process of creating this week’s viz, I learned how to use R Studio and the basics of data wragling with tidyverse, which led me to discover Quarto, resulting in my current blog system.\nWhat a wonderful journey it has been, it all started with a simple glance at Dr. Aditya Dahiya’s blog. R is so fascinating; I will definitely continue to dive deeper into it."
+  },
+  {
+    "objectID": "viz/weekly-viz-2024-08-18-w33/index.html#dataset",
+    "href": "viz/weekly-viz-2024-08-18-w33/index.html#dataset",
+    "title": "Weekly Viz 2024-08-18(W33)",
+    "section": "Dataset",
+    "text": "Dataset\nThe blog post is using source data from the United Nations Department of Economic and Social Affairs (UN DESA).\nThe author cleaned the data for use with R, I re-cleaned the data for use with Viz Extension in Tableau.\nlibrary(tidyverse)\n\nurl_remote &lt;- \"https://www.un.org/development/desa/pd/sites/www.un.org.development.desa.pd/files/undesa_pd_2020_ims_stock_by_sex_destination_and_origin.xlsx\"\nurl_local &lt;- \"international_migrant_stock_2020/undesa_pd_2020_ims_stock_by_sex_destination_and_origin.xlsx\"\n\nraw_df &lt;- openxlsx::read.xlsx(\n  xlsxFile = url_local,\n  sheet = \"Table 2\",\n  startRow = 10,\n  colNames = TRUE\n)\n\ntest &lt;- raw_df |&gt;\n  select(-12) |&gt; \n  janitor::clean_names() |&gt; \n  as_tibble() |&gt;\n  rename(destination = region_development_group_of_destination) |&gt; \n  mutate(destination = str_squish(destination)) |&gt; \n  select(-c(x1, x3, x4)) |&gt; \n  filter(str_detect(destination, \"income\")) |&gt; \n  select(-world) |&gt; \n  pivot_longer(\n    cols = -destination,\n    names_to = \"origin\",\n    values_to = \"value\"\n  ) |&gt; \n  filter(str_detect(origin, \"income\")) |&gt; \n  mutate(\n    destination = snakecase::to_title_case(destination),\n    origin = snakecase::to_title_case(origin)\n  ) |&gt;\n  filter(\n    (destination != \"Middle Income Countries\")\n    &\n      (origin != \"Middle Income Countries\")\n  )\n\nwrite_csv(migrant_flow, file = \"international_migrant_stock_2020/migration.csv\")"
+  },
+  {
+    "objectID": "viz/weekly-viz-2024-08-18-w33/index.html#thoughts-about-tableau-viz-extension",
+    "href": "viz/weekly-viz-2024-08-18-w33/index.html#thoughts-about-tableau-viz-extension",
+    "title": "Weekly Viz 2024-08-18(W33)",
+    "section": "Thoughts About Tableau Viz Extension",
+    "text": "Thoughts About Tableau Viz Extension\nAlthough the Tableau Viz Extension is a significant feature of Tableau released recently, I found that there are still some areas for improvement. For instance:\n\nThe flexibility of Chart Format is relatively low, especially in the Level Label, where you cannot adjust its position to both outside which is quite common in Sankey chart, and the font colors are not consistent in color palette, some are black, some are white.\nCurrently, only Tableau’s own Sankey Extension supports publishing to Tableau Public.\nWhile there are some third-party extensions available, but many require purchase, and I haven’t tested whether I can publish them to Tableau Server yet.\n\nTherefore, I personally think that while the Tableau Viz Extension looks promising, Tableau still have a lot of work to do. I will continue to keep an eye on it."
+  },
+  {
+    "objectID": "viz/weekly-viz-2024-08-18-w33/index.html#references",
+    "href": "viz/weekly-viz-2024-08-18-w33/index.html#references",
+    "title": "Weekly Viz 2024-08-18(W33)",
+    "section": "References",
+    "text": "References\n\nA good material to learn R, and it is open sourced on Github."
+  },
+  {
     "objectID": "viz/weekly-viz-2024-08-11-w32/index.html",
     "href": "viz/weekly-viz-2024-08-11-w32/index.html",
     "title": "Weekly Viz 2024-08-11(W32)",
@@ -39,6 +67,6 @@
     "href": "viz.html",
     "title": "Visualization",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nWeekly Viz 2024-08-11(W32)\n\n\n\n\n\n\nWOW24\n\n\nTableau\n\n\n\nCan you compare Olympic medalist age to a user’s age?\n\n\n\n\n\nAug 19, 2024\n\n\nAlbert Ji\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nWeekly Viz 2024-08-11(W32)\n\n\n\n\n\nCan you compare Olympic medalist age to a user’s age?\n\n\n\n\n\nAug 29, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nWeekly Viz 2024-08-18(W33)\n\n\n\n\n\nIs migration mainly driven by wealth?\n\n\n\n\n\nAug 29, 2024\n\n\n\n\n\n\nNo matching items"
   }
 ]
