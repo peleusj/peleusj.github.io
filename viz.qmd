@@ -5,7 +5,7 @@ listing:
   sort: "date desc"
   type: default
   # image-height: 150px
-  # fields: [date, title, description]
+  fields: [date, title, description, image]
   categories: true
   sort-ui: true
   filter-ui: true

@@ -1,11 +1,10 @@
 ---
 title: "Weekly Viz 2024-08-11(W32)"
 description: "Can you compare Olympic medalist age to a user’s age?"
-date: "2024-08-19"
+date: "2024-08-29"
 categories:
   - WOW24
   - Tableau
-image: "featured.png"
 ---
 
 This week's visulization is from [Workout Wednesday challenge W32](https://workout-wednesday.com/2024w32tab/){target="_blank"}.
