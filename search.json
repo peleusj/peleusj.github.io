@@ -1,30 +1,44 @@
 [
   {
-    "objectID": "posts/post-with-code/index.html",
-    "href": "posts/post-with-code/index.html",
-    "title": "Post With Code",
-    "section": "",
-    "text": "This is a post with executable code."
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "my-blog",
-    "section": "",
-    "text": "Post With Code\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\nAug 28, 2024\n\n\nHarlow Malloc\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nAug 25, 2024\n\n\nTristan O’Malley\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
     "title": "About",
     "section": "",
     "text": "About this blog"
   },
   {
-    "objectID": "posts/welcome/index.html",
-    "href": "posts/welcome/index.html",
-    "title": "Welcome To My Blog",
+    "objectID": "viz/weekly-viz-2024-08-11-w32/index.html",
+    "href": "viz/weekly-viz-2024-08-11-w32/index.html",
+    "title": "Weekly Viz 2024-08-11(W32)",
     "section": "",
-    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+    "text": "This week’s visulization is from Workout Wednesday challenge W32."
+  },
+  {
+    "objectID": "viz/weekly-viz-2024-08-11-w32/index.html#dataset",
+    "href": "viz/weekly-viz-2024-08-11-w32/index.html#dataset",
+    "title": "Weekly Viz 2024-08-11(W32)",
+    "section": "Dataset",
+    "text": "Dataset\nThe original dataset is from kaggle.\n\nThis is a historical dataset on the modern Olympic Games, including all the Games from Athens 1896 to Rio 2016. I scraped this data from www.sports-reference.com in May 2018. The R code I used to scrape and wrangle the data is on GitHub. I recommend checking my kernel before starting your own analysis.\n\nBut the challenge use a cleaned Excel file.\n\nThis challenge uses data from 1896-2016 Summer Olympics. You can find it here on Google Drive."
+  },
+  {
+    "objectID": "viz/weekly-viz-2024-08-11-w32/index.html#takeaway",
+    "href": "viz/weekly-viz-2024-08-11-w32/index.html#takeaway",
+    "title": "Weekly Viz 2024-08-11(W32)",
+    "section": "Takeaway",
+    "text": "Takeaway\n\nUse INT((INDEX()-1)/5) and table calculation to distribute rows\n\nneed to pay attention to specific dimensions used by the table calculation\n\nPlain string concat STR(FIXED_LOD) as dimensions\nUse IIF([Medal] = 'Gold', 'GOLD', NULL) function to simplify IF THEN END expresion\nReference line fill above according to the parameter\nEdit Axis with custom range\nTooltip formatting(font family, font size, colors)\n\nLearned about a new font Trebuchet MS\n\nSet Dashboard title"
+  },
+  {
+    "objectID": "viz/weekly-viz-2024-08-11-w32/index.html#references",
+    "href": "viz/weekly-viz-2024-08-11-w32/index.html#references",
+    "title": "Weekly Viz 2024-08-11(W32)",
+    "section": "References",
+    "text": "References\n\nSolution Guide by Donna Coles"
+  },
+  {
+    "objectID": "viz.html",
+    "href": "viz.html",
+    "title": "Visualization",
+    "section": "",
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nWeekly Viz 2024-08-11(W32)\n\n\n\n\n\n\nWOW24\n\n\nTableau\n\n\n\nCan you compare Olympic medalist age to a user’s age?\n\n\n\n\n\nAug 19, 2024\n\n\nAlbert Ji\n\n\n\n\n\n\nNo matching items"
   }
 ]

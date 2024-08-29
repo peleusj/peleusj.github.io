@@ -1,9 +1,8 @@
 [
   {
-    "listing": "/index.html",
+    "listing": "/viz.html",
     "items": [
-      "/posts/post-with-code/index.html",
-      "/posts/welcome/index.html"
+      "/viz/weekly-viz-2024-08-11-w32/index.html"
     ]
   }
 ]
