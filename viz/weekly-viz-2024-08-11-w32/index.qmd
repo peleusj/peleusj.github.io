@@ -1,7 +1,7 @@
 ---
 title: "Weekly Viz 2024-08-11(W32)"
 description: "Can you compare Olympic medalist age to a user’s age?"
-date: "2024-08-29"
+date: "2024-08-19"
 categories:
   - WOW24
   - Tableau
