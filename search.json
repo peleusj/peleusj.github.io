@@ -49,11 +49,11 @@
     "text": "Dataset\nThe original dataset is from kaggle.\n\nThis is a historical dataset on the modern Olympic Games, including all the Games from Athens 1896 to Rio 2016. I scraped this data from www.sports-reference.com in May 2018. The R code I used to scrape and wrangle the data is on GitHub. I recommend checking my kernel before starting your own analysis.\n\nBut the challenge use a cleaned Excel file.\n\nThis challenge uses data from 1896-2016 Summer Olympics. You can find it here on Google Drive."
   },
   {
-    "objectID": "viz/weekly-viz-2024-08-11-w32/index.html#takeaway",
-    "href": "viz/weekly-viz-2024-08-11-w32/index.html#takeaway",
+    "objectID": "viz/weekly-viz-2024-08-11-w32/index.html#key-takeaways",
+    "href": "viz/weekly-viz-2024-08-11-w32/index.html#key-takeaways",
     "title": "Weekly Viz 2024-08-11(W32)",
-    "section": "Takeaway",
-    "text": "Takeaway\n\nUse INT((INDEX()-1)/5) and table calculation to distribute rows\n\nneed to pay attention to specific dimensions used by the table calculation\n\nPlain string concat STR(FIXED_LOD) as dimensions\nUse IIF([Medal] = 'Gold', 'GOLD', NULL) function to simplify IF THEN END expresion\nReference line fill above according to the parameter\nEdit Axis with custom range\nTooltip formatting(font family, font size, colors)\n\nLearned about a new font Trebuchet MS\n\nSet Dashboard title"
+    "section": "Key Takeaways",
+    "text": "Key Takeaways\n\nUse INT((INDEX()-1)/5) and table calculation to distribute rows\n\nneed to pay attention to specific dimensions used by the table calculation\n\nPlain string concat STR(FIXED_LOD) as dimensions\nUse IIF([Medal] = 'Gold', 'GOLD', NULL) function to simplify IF THEN END expresion\nReference line fill above according to the parameter\nEdit Axis with custom range\nTooltip formatting(font family, font size, colors)\n\nLearned about a new font Trebuchet MS\n\nSet Dashboard title"
   },
   {
     "objectID": "viz/weekly-viz-2024-08-11-w32/index.html#references",
@@ -67,6 +67,6 @@
     "href": "viz.html",
     "title": "Visualization",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nWeekly Viz 2024-08-18(W33)\n\n\n\n\n\nIs migration mainly driven by wealth?\n\n\n\n\n\nAug 29, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nWeekly Viz 2024-08-11(W32)\n\n\n\n\n\nCan you compare Olympic medalist age to a user’s age?\n\n\n\n\n\nAug 19, 2024\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Description\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nWeekly Viz 2024-08-18(W33)\n\n\n\n\n\nIs migration mainly driven by wealth?\n\n\n\n\n\nAug 29, 2024\n\n\n4 min\n\n\n\n\n\n\n\n\n\n\n\n\nWeekly Viz 2024-08-11(W32)\n\n\n\n\n\nCan you compare Olympic medalist age to a user’s age?\n\n\n\n\n\nAug 19, 2024\n\n\n3 min\n\n\n\n\n\n\nNo matching items"
   }
 ]

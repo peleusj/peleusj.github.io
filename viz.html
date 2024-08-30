@@ -24,7 +24,6 @@ ul.task-list li input[type="checkbox"] {
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="site_libs/quarto-search/fuse.min.js"></script>
@@ -80,9 +79,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-date','listing-title','listing-description','listing-image',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-date','listing-reading-time','listing-title','listing-description','listing-image',{ data: ['index'] },{ data: ['categories'] }],
       
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -176,11 +175,9 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(2)</span></div><div class="category" data-category="R">R <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Tableau">Tableau <span class="quarto-category-count">(2)</span></div><div class="category" data-category="WOW24">WOW24 <span class="quarto-category-count">(1)</span></div></div></div>
+    
 <!-- main -->
-<main class="content column-page-left" id="quarto-document-content">
+<main class="content column-page" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -189,7 +186,7 @@ window.Quarto = {
 
 
 
-<div class="quarto-title-meta column-page-left">
+<div class="quarto-title-meta column-page">
 
     
   
@@ -215,11 +212,8 @@ window.Quarto = {
          <option value="listing-title" data-direction="asc">
           Title
         </option>
-         <option value="listing-date-sort" data-direction="asc">
-          Date - Oldest
-        </option>
-         <option value="listing-date-sort" data-direction="desc">
-          Date - Newest
+         <option value="listing-description" data-direction="asc">
+          Description
         </option>
      </select>
   </div>
@@ -229,7 +223,7 @@ window.Quarto = {
     </div>
 </div>
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="Tableau,R" data-listing-date-sort="1724889600000" data-listing-file-modified-sort="1724976235151" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="654">
+<div class="quarto-post image-right" data-index="0" data-categories="Tableau,R" data-listing-date-sort="1724889600000" data-listing-file-modified-sort="1724979540465" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="654">
 <div class="thumbnail">
 <p><a href="./viz/weekly-viz-2024-08-18-w33/index.html" class="no-external"></a></p><a href="./viz/weekly-viz-2024-08-18-w33/index.html" class="no-external">
 <p><img loading="lazy" src="./viz/weekly-viz-2024-08-18-w33/featured.png" class="thumbnail-image"></p>
@@ -251,10 +245,13 @@ window.Quarto = {
 <div class="listing-date">
 Aug 29, 2024
 </div>
+<div class="listing-reading-time">
+4 min
+</div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="WOW24,Tableau" data-listing-date-sort="1724025600000" data-listing-file-modified-sort="1724976235147" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="421">
+<div class="quarto-post image-right" data-index="1" data-categories="WOW24,Tableau" data-listing-date-sort="1724025600000" data-listing-file-modified-sort="1724979540461" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="422">
 <div class="thumbnail">
 <p><a href="./viz/weekly-viz-2024-08-11-w32/index.html" class="no-external"></a></p><a href="./viz/weekly-viz-2024-08-11-w32/index.html" class="no-external">
 <p><img loading="lazy" src="./viz/weekly-viz-2024-08-11-w32/featured.png" class="thumbnail-image"></p>
@@ -275,6 +272,9 @@ Aug 29, 2024
 <a href="./viz/weekly-viz-2024-08-11-w32/index.html" class="no-external">
 <div class="listing-date">
 Aug 19, 2024
+</div>
+<div class="listing-reading-time">
+3 min
 </div>
 </a>
 </div>
