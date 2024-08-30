@@ -8,6 +8,8 @@ image: "featured.png"
 format:
   html:
     page-layout: full
+    # code-fold: true
+    # code-summary: "Show the code"
 
 # freeze computational output
 # (see https://quarto.org/docs/projects/code-execution.html#freeze)

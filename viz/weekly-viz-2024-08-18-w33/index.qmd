@@ -23,6 +23,10 @@ The blog post is using source data from the [United Nations Department of Econom
 
 The author cleaned the data for use with R, I re-cleaned the data for use with Viz Extension in Tableau. 
 
+<details> 
+
+<summary>Show the code</summary>
+
 ```R
 library(tidyverse)
 
@@ -63,6 +67,8 @@ test <- raw_df |>
 
 write_csv(migrant_flow, file = "international_migrant_stock_2020/migration.csv")
 ```
+
+</details> 
 
 ## Thoughts About Tableau Viz Extension
 
