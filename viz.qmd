@@ -5,9 +5,9 @@ listing:
   sort: "date desc"
   type: default
   # image-height: 150px
-  fields: [date, title, description, image]
-  categories: true
-  sort-ui: true
+  fields: [date, reading-time, title, description, image]
+  categories: false
+  sort-ui: [title, description]
   filter-ui: true
 page-layout: full
 title-block-banner: false

@@ -4,6 +4,7 @@ project:
 website:
   title: "Albert Ji"
   navbar:
+    pinned: true
     right:
       - text: "Visulization"
         href: viz.qmd

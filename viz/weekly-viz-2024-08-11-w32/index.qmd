@@ -24,7 +24,7 @@ But the challenge use a cleaned Excel file.
 
 > This challenge uses data from 1896-2016 Summer Olympics. You can find it [here](https://docs.google.com/spreadsheets/d/12bPULEVBkJgSoVwdC15oLznrWjugWtU0/edit?gid=253771566#gid=253771566){target="_blank"} on Google Drive.
 
-## Takeaway
+## Key Takeaways
 
 - Use `INT((INDEX()-1)/5)` and table calculation to distribute rows
   - need to pay attention to specific dimensions used by the table calculation
